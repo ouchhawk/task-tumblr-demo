@@ -10,6 +10,7 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class ContentComponent implements OnInit{
 
+  text: string = "";
   posts:Post[]=[];
   postResponseModel: PostResponseModel={
     data: this.posts,
@@ -26,10 +27,13 @@ export class ContentComponent implements OnInit{
   }
 
   getPosts(){
-    this.postService.getPosts().subscribe(response => {
-      console.log(response.data)
+    this.postService.getRawData().subscribe(response => {
+      
+      this.text = response ; 
+      let prnt = JSON.parse(this.text.substring(22,27765)) ;
+      console.log(prnt);
+      debugger;
     })
-
   }
 
   

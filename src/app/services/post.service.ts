@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { Post } from '../models/post';
 
 
 @Injectable({
@@ -14,10 +15,17 @@ export class PostService {
 
   apiUrl = "/api/read/json";
 
+  getRawData(): Observable<any> {
+    return this.httpClient.get(this.apiUrl,{ responseType: 'text' });    
+  }
 
-  getPosts(): Observable<any>{
-    return this.httpClient
-    .get<any>(this.apiUrl);
+  // convertTumblrApiRead(){
+  //   return eval(this.getRawData());
+  // }
+
+  getPosts(): Observable<Post>{
+    console.log(this.httpClient.get<Post>(this.apiUrl));
+    return this.httpClient.get<Post>(this.apiUrl);
 
   }
 }
