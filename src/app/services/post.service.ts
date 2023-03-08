@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Post } from '../models/post';
+import { Root } from '../models/root';
 
 
 @Injectable({
@@ -23,9 +24,9 @@ export class PostService {
   //   return eval(this.getRawData());
   // }
 
-  getPosts(): Observable<Post>{
-    console.log(this.httpClient.get<Post>(this.apiUrl));
-    return this.httpClient.get<Post>(this.apiUrl);
+  getPosts(): Observable<Root>{
+    console.log(this.httpClient.get<Root>(this.apiUrl));
+    return this.httpClient.get<Root>(this.apiUrl);
 
   }
 }
