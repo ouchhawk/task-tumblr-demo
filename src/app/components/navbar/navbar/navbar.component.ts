@@ -7,35 +7,29 @@ import { PostService } from 'src/app/services/post.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
+  text: string = '';
+  posts: Post[] = [];
+  root: Root | undefined;
 
-
-  text: string = "";
-  posts:Post[]=[];
-  root:Root | undefined;
-  
-  postResponseModel: PostResponseModel={
+  postResponseModel: PostResponseModel = {
     data: this.posts,
-    message:"",
-    success:true
-  }
+    message: '',
+    success: true,
+  };
 
+  constructor(private postService: PostService) {}
 
-  constructor(private postService: PostService){
-  }
-
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.getPosts();
   }
 
-  getPosts(){
-    this.postService.getRawData().subscribe(response => {
-      this.text = response ; 
-      this.root = JSON.parse(this.text.substring(22,27765)) ;
-    })
+  getPosts() {
+    this.postService.getRawData().subscribe((response) => {
+      this.text = response;
+      this.root = JSON.parse(this.text.substring(22, 27765));
+    });
   }
-
-  
 }

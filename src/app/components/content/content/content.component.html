@@ -1,35 +1,75 @@
-<div>
+<div class="container">
+  <b class="title">
+    {{ this.root?.tumblelog?.title }}
+  </b>
+  <hr />
+
+  <div id="content">
     <div *ngFor="let post of posts">
-        <div *ngIf="post.type === 'quote'">
-            {{ post["quote-text"] }}
-            {{ post["quote-source"] }}
-        </div>
+      <div *ngIf="" class="post-date">123</div>
 
-        <div *ngIf="post.type === 'photo'">
-            <img src="{{ post['photo-url-400'] }}" alt="{{ post.slug }}" />
-            {{ post["photo-caption"] }}
+      <!-- quote -->
+      <div class="quote" *ngIf="post.type === 'quote'">
+        <div class="quote-text">
+          {{ post["quote-text"] }}
         </div>
+        <b class="quote-source">
+          
+          <div [innerHTML]="post['quote-source']">— </div>
+        </b>
+      </div>
 
-        <div *ngIf="post.type === 'link'">
-            <a href="{{ post['link-url'] }}">{{ post["link-text"] }}</a>
-            {{ post["link-description"] }}
+      <!-- photo -->
+      <div class="photo" *ngIf="post.type === 'photo'">
+        <div class="photo-url">
+          <a href="https://demo.tumblr.com/image/{{ post.id }}"
+            ><img src="{{ post['photo-url-400'] }}" alt="{{ post.slug }}"
+          /></a>
         </div>
+        <div class="photo-caption"
+        [innerHTML]="post['photo-caption']" class="photo-caption">
+        </div>
+      </div>
 
-        <div *ngIf="post.type === 'conversation'">
-            <div *ngFor="let conversation of post.conversation">
-                <table>
-                    <tr>
-                        <td>{{ conversation.name }}: {{ conversation.phrase }}</td>
-                    </tr>
-                </table>
-            </div>
+      <!-- link -->
+      <div class="link" *ngIf="post.type === 'link'">
+        <a class="link-text" href="{{ post['link-url'] }}">
+          {{ post["link-text"] }}
+        </a>
+        <br />
+        <div
+          [innerHTML]="post['link-description']" class="link-description">
         </div>
-        <div *ngIf="post.type === 'audio'">
-            {{ post["audio-caption"] }}
-        </div>
+      </div>
 
-        <div *ngIf="post.type === 'regular'">
-            {{ post["regular-body"] }}
+      <!-- conversation -->
+      <div class="conversation" *ngIf="post.type === 'conversation'">
+        <div *ngFor="let conversation of post.conversation">
+          <table>
+            <tr>
+              <td>{{ conversation.name }}: {{ conversation.phrase }}</td>
+            </tr>
+          </table>
         </div>
+      </div>
+
+      <!-- audio -->
+      <div class="audio" *ngIf="post.type === 'audio'">
+        <div [innerHTML]="post['audio-caption']">
+          
+        </div>
+      </div>
+
+      <!-- regular -->
+      <div class="regular" *ngIf="post.type === 'regular'">
+        <div [innerHTML]="post['regular-title']">
+
+        </div>
+        <div [innerHTML]="post['regular-body']">
+
+        </div>
+        
+      </div>
     </div>
+  </div>
 </div>

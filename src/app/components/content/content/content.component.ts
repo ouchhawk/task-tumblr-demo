@@ -8,37 +8,45 @@ import { PostService } from 'src/app/services/post.service';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  styleUrls: ['./content.component.css'],
 })
-export class ContentComponent implements OnInit{
-  text: string = "";
-  posts:Post[]=[];
-  root:Root | undefined;
-  postTypeEnum:PostTypeEnum=0;
-  
-  postResponseModel: PostResponseModel={
+export class ContentComponent implements OnInit {
+  text: string = '';
+  posts: Post[] = [];
+  root: Root;
+  postTypeEnum: PostTypeEnum = 0;
+
+  postResponseModel: PostResponseModel = {
     data: this.posts,
-    message:"",
-    success:true
-  }
+    message: '',
+    success: true,
+  };
 
+  constructor(private postService: PostService) {}
 
-  constructor(private postService: PostService){
-  }
-
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.getPosts();
   }
 
-  getPosts(){
-    this.postService.getRawData().subscribe(response => {
-      this.text = response ; 
-      let root = JSON.parse(this.text.substring(22,27765)) ;
-      this.posts=root.posts;
-      for(let post of this.posts){
+  getPosts() {
+    this.postService.getRawData().subscribe((response) => {
+      const startIndex = response.indexOf('{');
+      const endIndex = response.lastIndexOf(';');
+      const concatedString = response.substring(startIndex, endIndex);
+
+      this.root = JSON.parse(concatedString);
+      this.posts = this.root.posts;
+
+      let day: Date;
+
+      this.posts.forEach((post, index) => {
+        post;
+      });
+
+      let previousPost: Post;
+      for (let post of this.posts) {
         console.log(post);
       }
-      });
-    }
-  
+    });
+  }
 }
