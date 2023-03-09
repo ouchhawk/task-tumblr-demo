@@ -75,5 +75,8 @@ export interface Post {
   'audio-plays'?: number;
   'regular-title'?: string;
   'regular-body'?: string;
-  'do-print':boolean;
+  'is-date-visible':boolean;
+  'day':string;
+  'weekday':string;
+  'month':string;
 }

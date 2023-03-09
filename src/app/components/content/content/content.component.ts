@@ -8,11 +8,12 @@ import { PostService } from 'src/app/services/post.service';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css'],
+  styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent implements OnInit {
   text: string = '';
   posts: Post[] = [];
+  dates: any[] = [];
   root: Root;
   postTypeEnum: PostTypeEnum = 0;
 
@@ -32,15 +33,42 @@ export class ContentComponent implements OnInit {
     this.postService.getRawData().subscribe((response) => {
       const startIndex = response.indexOf('{');
       const endIndex = response.lastIndexOf(';');
-      const concatedString = response.substring(startIndex, endIndex);
+      const selectedString = response.substring(startIndex, endIndex);
 
-      this.root = JSON.parse(concatedString);
+      this.root = JSON.parse(selectedString);
       this.posts = this.root.posts;
 
-      let day: Date;
+      const weekdayStartIndex = 0;
+      const weekdayEndIndex = 3;
+      const dayStartIndex = 5;
+      const dayEndIndex = 7;
+      const monthStartIndex = 8;
+      const monthEndIndex = 11;
+      this.posts.forEach((post) => {
+        const weekday = post['date']
+          .substring(weekdayStartIndex, weekdayEndIndex)
+          .toUpperCase();
+        post['weekday'] = weekday;
+        const day = post['date']
+          .substring(dayStartIndex, dayEndIndex)
+          .toUpperCase();
+        post['day'] = day;
+        const month = post['date']
+          .substring(monthStartIndex, monthEndIndex)
+          .toUpperCase();
+        post['month'] = month;
+      });
 
-      this.posts.forEach((post, index) => {
-        post;
+      let previousMonth = '',
+        previousDay = '';
+      this.posts.forEach((post) => {
+        if (previousDay === post['day'] && previousMonth === post['month']) {
+          post['is-date-visible'] = false;
+        } else {
+          post['is-date-visible'] = true;
+        }
+        previousMonth = post['month'];
+        previousDay = post['day'];
       });
 
       let previousPost: Post;
@@ -49,4 +77,6 @@ export class ContentComponent implements OnInit {
       }
     });
   }
+
+  parseDate() {}
 }
