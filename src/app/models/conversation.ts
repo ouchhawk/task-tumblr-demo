@@ -1,5 +1,5 @@
 export interface Conversation {
-    name: string
-    label: string
-    phrase: string
-  }
+  name: string;
+  label: string;
+  phrase: string;
+}
