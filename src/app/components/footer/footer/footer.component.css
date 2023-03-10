@@ -1,3 +1,61 @@
-.footer{
-    text-align: center;
+.footer {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: -0.5px;
+  font-size: small;
+}
+
+.banner {
+  float: center;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: small;
+  margin: 5px;
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 600px;
+  padding-left: 50px;
+  padding-top: 25px;
+  color: #ffffff;
+  background-color: #7c5cff;
+}
+
+.banner-title {
+  font-size: large;
+  font-weight: 750;
+}
+
+.banner-content {
+  font-size: 14px;
+}
+
+.banner-body {
+  grid-column-start: 1;
+}
+
+.btn-secondary {
+  justify-content: center;
+  grid-column-start: 2;
+  margin: 10px;
+  width: 125px;
+  height: 50px;
+  color: #7c5cff;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-dark {
+  grid-column-start: 3;
+  margin: 10px;
+  width: 125px;
+  height: 50px;
+  color: #ffffff;
+  background-color: #7c5cff;
+  border-color: #ffffff;
 }

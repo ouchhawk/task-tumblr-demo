@@ -2,17 +2,15 @@
   <b class="title">
     {{ this.root?.tumblelog?.title }}
   </b>
+
   <hr />
 
-  <div>
-    <div *ngFor="let post of posts">
-
+  <div class="post-container">
+    <div class="post-content" *ngFor="let post of posts">
       <div *ngIf="post['is-date-visible']" class="datebox">
-        
-        <p class="datebox-weekday">
+        <div class="datebox-weekday">
           {{ post["weekday"] }}
-        </p>
-
+        </div>
         <div class="datebox-month">
           <div>
             {{ post["month"] }}
@@ -35,16 +33,15 @@
 
       <!-- photo -->
       <div class="photo" *ngIf="post.type === 'photo'">
-        <div >
+        <div>
           <a href="https://demo.tumblr.com/image/{{ post.id }}"
-            ><img class="photo-source" src="{{ post['photo-url-400'] }}" alt="{{ post.slug }}"
+            ><img
+              class="photo-source"
+              src="{{ post['photo-url-400'] }}"
+              alt="{{ post.slug }}"
           /></a>
         </div>
-        <div
-          class="photo-caption"
-          [innerHTML]="post['photo-caption']"
-          class="photo-caption"
-        ></div>
+        <div class="photo-caption" [innerHTML]="post['photo-caption']"></div>
       </div>
 
       <!-- link -->

@@ -1,6 +1,36 @@
-.main-nav {
-  text-align: center;
-  font-size: 50em;
-  font-weight: bold;
-  color: #444444;
+.navbar {
+  display: flex;
+  justify-content: right;
+  flex-grow: 0;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  color: #ffffff;
+}
+
+#follow-button,
+#explore-button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  border: 0;
+}
+
+.btn-secondary {
+  margin: 5px;
+  height: 30px;
+  background-color: #9da6af;
+  opacity: 0.5;
+}
+
+.btn-dark {
+  height: 30px;
+  background-color: #001930;
+  opacity: 0.8;
+}
+
+.btn-primary-outline {
 }
