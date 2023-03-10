@@ -1,6 +1,6 @@
 <div class="container">
   <b class="title">
-    {{ this.root?.tumblelog?.title }}
+    <a href="">{{ this.root?.tumblelog?.title }}</a>
   </b>
 
   <hr />
@@ -34,19 +34,20 @@
       <!-- photo -->
       <div class="photo" *ngIf="post.type === 'photo'">
         <div>
-          <a href="https://demo.tumblr.com/image/{{ post.id }}"
-            ><img
+          <a href="https://demo.tumblr.com/image/{{ post.id }}" target="_blank">
+            <img
               class="photo-source"
               src="{{ post['photo-url-400'] }}"
               alt="{{ post.slug }}"
-          /></a>
+            />
+          </a>
         </div>
         <div class="photo-caption" [innerHTML]="post['photo-caption']"></div>
       </div>
 
       <!-- link -->
       <div class="link" *ngIf="post.type === 'link'">
-        <a class="link-text" href="{{ post['link-url'] }}">
+        <a class="link-text" href="{{ post['link-url'] }}" target="_blank">
           {{ post["link-text"] }}
         </a>
         <br />
@@ -60,8 +61,12 @@
       <div class="conversation" *ngIf="post.type === 'conversation'">
         <table>
           <tr>
-            <div class="chat-message" *ngFor="let conversation of post.conversation">
-                <span class="chat-user">{{ conversation.name }}: </span><span>{{ conversation.phrase }}</span>
+            <div
+              class="chat-message"
+              *ngFor="let conversation of post.conversation"
+            >
+              <span class="chat-user">{{ conversation.name }}: </span
+              ><span>{{ conversation.phrase }}</span>
             </div>
           </tr>
         </table>
@@ -70,16 +75,24 @@
       <!-- audio -->
       <div class="audio" *ngIf="post.type === 'audio'">
         <table>
-          <tr >
+          <tr>
             <td class="bi bi-play">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black"  viewBox="0 0 16 16">
-                <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="black"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
+                />
               </svg>
               <span class="audio-player">Dinle</span>
             </td>
           </tr>
         </table>
-        <br>
+        <br />
         <div [innerHTML]="post['audio-caption']"></div>
       </div>
 

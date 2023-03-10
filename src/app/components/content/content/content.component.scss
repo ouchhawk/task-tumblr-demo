@@ -2,6 +2,12 @@
   font-size: 50px;
   font-weight: bold;
   color: #444444;
+  a {
+    font-size: 50px;
+    font-weight: bold;
+    color: #444444;
+    text-decoration: unset;
+  }
 }
 
 .container {
@@ -142,14 +148,14 @@
   }
 }
 
-.chat-message:nth-child(odd){
-  .chat-user{
+.chat-message:nth-child(odd) {
+  .chat-user {
     color: #cc0000;
     font-weight: bold;
   }
 }
-.chat-message:nth-child(even){
-  .chat-user{
+.chat-message:nth-child(even) {
+  .chat-user {
     color: #0003cc;
     font-weight: bold;
   }
@@ -163,15 +169,15 @@
 
 .audio {
   float: left;
-  .bi-play{
+  .bi-play {
     border-left: 5px solid #bbbbbb;
   }
-  table{
+  table {
     padding-top: 0em;
     text-align: left;
     width: 200px;
     background-color: #e8e8e8;
-    color:#444444;
+    color: #444444;
     font-weight: bolder;
     font-size: smaller;
     align-items: center;
@@ -179,8 +185,8 @@
 }
 
 .audio-player {
-  position:relative;
-  top:-8px;
+  position: relative;
+  top: -8px;
   height: 30px;
 }
 

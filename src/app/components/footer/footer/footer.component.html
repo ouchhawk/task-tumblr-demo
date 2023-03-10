@@ -1,6 +1,6 @@
 <footer class="footer">Powered by Tumblr</footer>
 
-<footer class="banner" role="document">
+<form *ngIf="isFooterModalVisible" class="banner" role="document">
   <div class="banner-body">
     
     <div class="banner-title">Tumblr'a katıl</div>
@@ -11,6 +11,7 @@
     id="register-button"
     type="button"
     class="btn register-button btn-primary-outline"
+    (click)="onClickRegisterButton()"
   >
     Kaydol
   </button>
@@ -19,10 +20,13 @@
     id="signin-button"
     type="button"
     class="btn signin-button btn-primary-outline"
+    (click)="onClickLoginButton()"
   >
     Oturum aç
   </button>
-  <button id="close-button" type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+  <button id="close-button" type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClickCloseButton()">
     <span aria-hidden="true">&times;</span>
   </button>
-</footer>
+
+</form>

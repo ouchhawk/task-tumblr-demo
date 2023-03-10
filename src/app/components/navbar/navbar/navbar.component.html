@@ -1,9 +1,10 @@
 <nav class="navbar">
-  
-  <button
+  <form>
+    <button
     id="follow-button"
     type="button"
     class="btn btn-secondary btn-primary-outline"
+    (click)="onClickFollowButton()"
   >
   demo blogunu takip et
   </button>
@@ -11,7 +12,9 @@
     id="explore-button"
     type="button"
     class="btn btn-dark btn-primary-outline"
+    (click)="onClickExploreButton()"
   >
   tumblr
   </button>
+  </form>
 </nav>

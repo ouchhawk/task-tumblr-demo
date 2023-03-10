@@ -14,6 +14,7 @@ export class ContentComponent implements OnInit {
   text: string = '';
   posts: Post[] = [];
   dates: any[] = [];
+  rootUrl:string="localhost:4200";
   root: Root;
   postTypeEnum: PostTypeEnum = 0;
 
@@ -74,9 +75,9 @@ export class ContentComponent implements OnInit {
       let previousPost: Post;
       for (let post of this.posts) {
         console.log(post);
+        console.log(this.root);
       }
     });
   }
 
-  parseDate() {}
 }
