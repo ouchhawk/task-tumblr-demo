@@ -17,6 +17,7 @@
 .post-content {
   grid-column-start: 2;
   height: auto;
+  padding-bottom: 25px;
 }
 
 .datebox {
@@ -122,24 +123,35 @@
 
 .conversation {
   font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  text-align: left;
   color: #888;
   font-size: 0.8em;
-  font-weight: bold;
-
-  /* border-collapse: collapse; */
   width: 100%;
   border-left: 5px solid #bbbbbb;
-  color: #555555;
   table {
-    tr :nth-child(odd) {
-      padding: 0 0 0 1em;
-      background-color: #c72020;
+    tr {
+      div:nth-child(odd) {
+        padding: 0 0 0 1em;
+        background-color: #f4f4f4;
+      }
+      div:nth-child(even) {
+        padding: 0 0 0 1em;
+        background-color: #e8e8e8;
+      }
     }
-    tr:nth-child(even) {
-      padding: 0 0 0 1em;
-      background-color: #2c0db4;
-    }
+  }
+}
+
+.chat-message:nth-child(odd){
+  .chat-user{
+    color: #cc0000;
+    font-weight: bold;
+  }
+}
+.chat-message:nth-child(even){
+  .chat-user{
+    color: #0003cc;
+    font-weight: bold;
   }
 }
 
@@ -151,6 +163,25 @@
 
 .audio {
   float: left;
+  .bi-play{
+    border-left: 5px solid #bbbbbb;
+  }
+  table{
+    padding-top: 0em;
+    text-align: left;
+    width: 200px;
+    background-color: #e8e8e8;
+    color:#444444;
+    font-weight: bolder;
+    font-size: smaller;
+    align-items: center;
+  }
+}
+
+.audio-player {
+  position:relative;
+  top:-8px;
+  height: 30px;
 }
 
 .audio-caption {

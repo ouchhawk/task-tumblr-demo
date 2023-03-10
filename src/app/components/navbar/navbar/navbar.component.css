@@ -11,24 +11,31 @@
   color: #ffffff;
 }
 
-#follow-button,
-#explore-button {
+#explore-button,
+#follow-button {
+  padding-top:0;
+  padding-bottom: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: 16px;
   border: 0;
 }
 
+
+#follow-button{
+  font-size: 12px;
+}
+
 .btn-secondary {
   margin: 5px;
-  height: 30px;
-  background-color: #9da6af;
-  opacity: 0.5;
+  height: 28px;
+  background-color: #b0b0b0;
+  opacity: 0.8;
 }
 
 .btn-dark {
-  height: 30px;
-  background-color: #001930;
+  height: 28px;
+  background-color: #000525;
   opacity: 0.8;
 }
 

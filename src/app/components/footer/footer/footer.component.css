@@ -9,8 +9,8 @@
 .banner {
   float: center;
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-  justify-content: center;
+  grid-template-columns: 6fr 2fr 2fr 1fr;
+  justify-items: center;
   font-weight: bolder;
   font-size: small;
   margin: 5px;
@@ -19,29 +19,34 @@
   bottom: 0;
   left: 0;
   right: 0;
-  width: 600px;
-  padding-left: 50px;
-  padding-top: 25px;
+  width: 650px;
+  padding-left: 25px;
+  padding-top: 15px;
   color: #ffffff;
   background-color: #7c5cff;
+  top: 100%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -346px;
 }
 
 .banner-title {
-  font-size: large;
+  font-size: 20px;
   font-weight: 750;
 }
 
 .banner-content {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .banner-body {
   grid-column-start: 1;
 }
 
-.btn-secondary {
+#register-button {
+  grid-column-start: 7;
   justify-content: center;
-  grid-column-start: 2;
+  font-weight: bold;
   margin: 10px;
   width: 125px;
   height: 50px;
@@ -50,12 +55,23 @@
   border-color: #ffffff;
 }
 
-.btn-dark {
-  grid-column-start: 3;
+#signin-button {
+  grid-column-start: 9;
+  font-weight: bold;
   margin: 10px;
   width: 125px;
   height: 50px;
   color: #ffffff;
   background-color: #7c5cff;
   border-color: #ffffff;
+}
+
+#close-button {
+  grid-column-start: 11;
+  position: relative;
+  height: 20px;
+  top: -12px;
+  left: -5px;
+  color: #ffffff;
+  opacity: 1;
 }
