@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { PostTypeEnum } from 'src/app/enums/post-type-enum';
 import { Post } from 'src/app/models/post';
 import { PostResponseModel } from 'src/app/models/postResponseModel';
@@ -17,7 +18,11 @@ export class ContentComponent implements OnInit {
   rootUrl:string="localhost:4200";
   root: Root;
   postTypeEnum: PostTypeEnum = 0;
-
+  count:number=0;
+  isModalButtonVisible:boolean[]=[false];
+  isModalVisible:boolean[]=[false];
+  postForm:FormGroup;
+  
   postResponseModel: PostResponseModel = {
     data: this.posts,
     message: '',
@@ -35,7 +40,6 @@ export class ContentComponent implements OnInit {
       const startIndex = response.indexOf('{');
       const endIndex = response.lastIndexOf(';');
       const selectedString = response.substring(startIndex, endIndex);
-
       this.root = JSON.parse(selectedString);
       this.posts = this.root.posts;
 
@@ -62,7 +66,8 @@ export class ContentComponent implements OnInit {
 
       let previousMonth = '',
         previousDay = '';
-      this.posts.forEach((post) => {
+      this.posts.forEach(post => {
+
         if (previousDay === post['day'] && previousMonth === post['month']) {
           post['is-date-visible'] = false;
         } else {
@@ -72,12 +77,21 @@ export class ContentComponent implements OnInit {
         previousDay = post['day'];
       });
 
-      let previousPost: Post;
       for (let post of this.posts) {
         console.log(post);
-        console.log(this.root);
       }
+      // console.log(this.root);
     });
   }
 
+
+
+
+  onClickOpenDetails(i:number){
+    console.log("clikked")
+  }
+
+  applyStyle(){
+
+  }
 }

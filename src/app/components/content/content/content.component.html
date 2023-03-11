@@ -2,11 +2,11 @@
   <b class="title">
     <a href="">{{ this.root?.tumblelog?.title }}</a>
   </b>
-
   <hr />
 
   <div class="post-container">
-    <div class="post-content" *ngFor="let post of posts">
+    <div class="post-content" *ngFor="let post of posts; let i = index" (mouseenter)="isModalButtonVisible[i] = true"
+      (mouseleave)="isModalButtonVisible[i] = false">
       <div *ngIf="post['is-date-visible']" class="datebox">
         <div class="datebox-weekday">
           {{ post["weekday"] }}
@@ -21,85 +21,116 @@
         </div>
       </div>
 
+      <!-- open details button -->
+      <div *ngIf="isModalButtonVisible[i]" style="visibility:visible;">
+        <button class="open-details-button" (click)="onClickOpenDetails(i)">
+          <img src="https://static.tumblr.com/vr9xgox/NoWnf8zop/permalink.gif" alt="open content" />
+        </button>
+      </div>
+      <div *ngIf="!isModalButtonVisible[i]" style="visibility:hidden">
+        <button class="open-details-button" (click)="onClickOpenDetails(i)">
+          <img src="https://static.tumblr.com/vr9xgox/NoWnf8zop/permalink.gif" alt="open content" />
+        </button>
+      </div>
+
       <!-- quote -->
       <div class="quote" *ngIf="post.type === 'quote'">
-        <div class="quote-text">
-          {{ post["quote-text"] }}
+        <div>
+          <div class="quote-text">
+            {{ post["quote-text"] }}
+          </div>
+          <b class="quote-source">
+            — <span [innerHTML]="post['quote-source']"></span>
+          </b>
         </div>
-        <b class="quote-source">
-          — <span [innerHTML]="post['quote-source']"></span>
-        </b>
       </div>
 
       <!-- photo -->
-      <div class="photo" *ngIf="post.type === 'photo'">
-        <div>
-          <a href="https://demo.tumblr.com/image/{{ post.id }}" target="_blank">
-            <img
-              class="photo-source"
-              src="{{ post['photo-url-400'] }}"
-              alt="{{ post.slug }}"
-            />
-          </a>
+      <div>
+        <div class="photo" *ngIf="post.type === 'photo'">
+          <div>
+            <a href="https://demo.tumblr.com/image/{{ post.id }}" target="_blank">
+              <img class="photo-source" src="{{ post['photo-url-400'] }}" alt="{{ post.slug }}" />
+            </a>
+          </div>
+          <div class="photo-caption" [innerHTML]="post['photo-caption']"></div>
         </div>
-        <div class="photo-caption" [innerHTML]="post['photo-caption']"></div>
       </div>
 
       <!-- link -->
-      <div class="link" *ngIf="post.type === 'link'">
-        <a class="link-text" href="{{ post['link-url'] }}" target="_blank">
-          {{ post["link-text"] }}
-        </a>
-        <br />
-        <div
-          [innerHTML]="post['link-description']"
-          class="link-description"
-        ></div>
+      <div *ngIf="post.type === 'link'">
+        <div class="link">
+          <a class="link-text" href="{{ post['link-url'] }}" target="_blank">
+            {{ post["link-text"] }}
+          </a>
+          <br />
+          <div [innerHTML]="post['link-description']" class="link-description"></div>
+        </div>
       </div>
 
       <!-- conversation -->
-      <div class="conversation" *ngIf="post.type === 'conversation'">
-        <table>
-          <tr>
-            <div
-              class="chat-message"
-              *ngFor="let conversation of post.conversation"
-            >
-              <span class="chat-user">{{ conversation.name }}: </span
-              ><span>{{ conversation.phrase }}</span>
-            </div>
-          </tr>
-        </table>
+      <div *ngIf="post.type === 'conversation'">
+        <div class="conversation">
+          <table>
+            <tr>
+              <div class="chat-message" *ngFor="let conversation of post.conversation">
+                <span class="chat-user">{{ conversation.name }}: </span><span>{{ conversation.phrase }}</span>
+              </div>
+            </tr>
+          </table>
+        </div>
       </div>
 
       <!-- audio -->
-      <div class="audio" *ngIf="post.type === 'audio'">
-        <table>
-          <tr>
-            <td class="bi bi-play">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="black"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
-                />
-              </svg>
-              <span class="audio-player">Dinle</span>
-            </td>
-          </tr>
-        </table>
-        <br />
-        <div [innerHTML]="post['audio-caption']"></div>
+      <div *ngIf="post.type === 'audio'">
+        <div class="audio">
+          <table>
+            <tr>
+              <td class="bi bi-play">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z" />
+                </svg>
+                <span class="audio-player">Dinle</span>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <div [innerHTML]="post['audio-caption']"></div>
+        </div>
       </div>
 
       <!-- regular -->
-      <div class="regular" *ngIf="post.type === 'regular'">
-        <div [innerHTML]="post['regular-title']"></div>
-        <div [innerHTML]="post['regular-body']"></div>
+      <div *ngIf="post.type === 'regular'">
+        <div>
+          <div class="regular-title" [innerHTML]="post['regular-title']"></div>
+          <div class="regular-body" [innerHTML]="post['regular-body']"></div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isModalVisible[0]" tabindex="-1" role="dialog">
+  <div class="details-modal-dialog" role="document">
+    <div class="details-modal-content">
+      <div class="details-modal-header">
+        <h5 class="details-modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="details-modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="details-modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="details-modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="details-modal">
+          Close
+        </button>
       </div>
     </div>
   </div>

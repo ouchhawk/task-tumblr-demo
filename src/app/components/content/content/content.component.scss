@@ -1,11 +1,12 @@
 .title {
   font-size: 50px;
   font-weight: bold;
-  color: #444444;
+  color: #444;
+
   a {
     font-size: 50px;
     font-weight: bold;
-    color: #444444;
+    color: #444;
     text-decoration: unset;
   }
 }
@@ -47,16 +48,14 @@
   color: #bbd5f1;
   background-color: #6498cc;
 }
+
 .datebox-weekday {
   height: 30px;
   float: center;
   vertical-align: middle;
-  color: #cccccc;
+  color: #ccc;
   font-size: 35px;
   line-height: 1;
-}
-
-.quote {
 }
 
 .quote-text {
@@ -68,7 +67,8 @@
   border-collapse: collapse;
   width: 100%;
   border-left: 5px solid #6498cc;
-  color: #888888;
+  color: #888;
+
   a,
   a:hover,
   a:visited {
@@ -82,8 +82,7 @@
   float: left;
   font-size: 1em;
   font-weight: bold;
-  /* border-collapse: collapse; */
-  color: #444444;
+  color: #444;
 }
 
 .photo {
@@ -98,12 +97,13 @@
 .photo-caption {
   font-size: 0.8em;
   font-weight: bold;
-  color: #444444;
-  a {
+  color: #444;
+
+  a:visited {
     text-decoration: underline;
     font-size: 0.8em;
     font-weight: bold;
-    color: #444444;
+    color: #444;
   }
 }
 
@@ -116,8 +116,7 @@
   }
 }
 
-.link-text {
-}
+.link-text {}
 
 .link-description {
   font-family: Helvetica, Arial, sans-serif;
@@ -133,13 +132,15 @@
   color: #888;
   font-size: 0.8em;
   width: 100%;
-  border-left: 5px solid #bbbbbb;
+  border-left: 5px solid #bbb;
+
   table {
     tr {
       div:nth-child(odd) {
         padding: 0 0 0 1em;
         background-color: #f4f4f4;
       }
+
       div:nth-child(even) {
         padding: 0 0 0 1em;
         background-color: #e8e8e8;
@@ -154,6 +155,7 @@
     font-weight: bold;
   }
 }
+
 .chat-message:nth-child(even) {
   .chat-user {
     color: #0003cc;
@@ -161,23 +163,23 @@
   }
 }
 
-.conversation-name {
-}
+.conversation-name {}
 
-.conversation-phrase {
-}
+.conversation-phrase {}
 
 .audio {
   float: left;
+
   .bi-play {
-    border-left: 5px solid #bbbbbb;
+    border-left: 5px solid #bbb;
   }
+
   table {
     padding-top: 0em;
     text-align: left;
     width: 200px;
     background-color: #e8e8e8;
-    color: #444444;
+    color: #444;
     font-weight: bolder;
     font-size: smaller;
     align-items: center;
@@ -200,10 +202,48 @@
 
 .regular-title {
   text-align: left;
+  font-weight: bolder;
   color: #6498cc;
 }
 
 .regular-body {
   font-size: small;
   text-align: left;
+
+  a {
+    color: #cc0000;
+  }
+
+  p {
+    a {
+      color: #cc0000;
+    }
+
+    a:link,
+    a:hover,
+    a:visited,
+    a:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+.quote {}
+
+.open-details-button {
+  position: absolute;
+  float: right;
+  display: contents;
+  width: 20px;
+  height: 35px;
+  grid-template-columns: 1fr 1fr;
+  left: 500px;
+  top: -350px;
+  line-height: 1;
+
+  img {
+    float: right;
+    width: 14px;
+  }
+  
 }

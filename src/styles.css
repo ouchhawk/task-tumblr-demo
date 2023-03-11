@@ -3,3 +3,25 @@
 body {
   font-family: arial, sans-serif;
 }
+
+a, a:hover, a:visited, a:link, a:active {
+  color:#444444;
+  text-decoration: underline;
+}
+
+p > a:active {
+  color:#6498cc;
+  text-decoration: underline;
+}
+p > a:link {
+  color:#6498cc;
+  text-decoration: underline;
+}
+p > a:visited {
+  color:#6498cc;
+  text-decoration: underline;
+}
+p > a:hover {
+  color:#6498cc;
+  text-decoration: underline;
+}
