@@ -1,221 +1,195 @@
 .quote-text {
-    text-align: left;
-    line-height: normal;
-    font-size: 2em;
-    font-weight: bold;
-    padding-left: 0.5em;
-    border-collapse: collapse;
-    width: 100%;
-    border-left: 5px solid #6498cc;
-    color: #888;
-  
-    a,
-    a:hover,
-    a:visited {
-      float: left;
-      color: #cc0000;
-      font-weight: bold;
-    }
-  }
-  
-  .quote-source {
+  text-align: left;
+  line-height: normal;
+  font-size: 36px;
+  font-weight: bold;
+  padding-left: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  border-left: 5px solid #6498cc;
+  color: #888;
+
+  a,
+  a:hover,
+  a:visited {
     float: left;
-    font-size: 1em;
+    color: #cc0000;
     font-weight: bold;
-    color: #444;
   }
-  
-  .photo {
-    text-align: center;
-    width: fit-content;
-  }
-  
-  .photo-source {
-    margin-bottom: 10px;
-  }
-  
-  .photo-caption {
+}
+
+.quote-source {
+  float: left;
+  font-size: 1em;
+  font-weight: bold;
+  color: #444;
+}
+
+.photo {
+  float: left;
+  padding-bottom: 20px;
+}
+
+.photo-source {
+  width: 416px;
+  margin-bottom: 11px;
+}
+
+.photo-caption {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #444;
+
+  a:visited {
+    text-decoration: underline;
     font-size: 0.8em;
     font-weight: bold;
     color: #444;
-  
-    a:visited {
-      text-decoration: underline;
-      font-size: 0.8em;
-      font-weight: bold;
-      color: #444;
+  }
+}
+
+.link {
+  a {
+    text-decoration: underline;
+    float: left;
+    color: #cc0000;
+    font-weight: bold;
+  }
+}
+
+.link-description {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: small;
+  font-weight: 300;
+  text-align: left;
+  letter-spacing: -1px;
+}
+
+.conversation {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: left;
+  color: #888;
+  font-size: 0.8em;
+  border-left: 5px solid #bbb;
+
+  table {
+    width: 415px;
+
+    tr {
+      div:nth-child(odd) {
+        padding: 0 0 0 1em;
+        background-color: #f4f4f4;
+      }
+
+      div:nth-child(even) {
+        padding: 0 0 0 1em;
+        background-color: #e8e8e8;
+      }
     }
   }
-  
-  .link {
-    a {
-      text-decoration: underline;
-      float: left;
-      color: #cc0000;
-      font-weight: bold;
-    }
+}
+
+.chat-message:nth-child(odd) {
+  .chat-user {
+    color: #cc0000;
+    font-weight: bold;
   }
-  
-  .link-text {}
-  
-  .link-description {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: small;
-    font-weight: 300;
-    text-align: left;
-    letter-spacing: -1px;
+}
+
+.chat-message:nth-child(even) {
+  .chat-user {
+    color: #0003cc;
+    font-weight: bold;
   }
-  
-  .conversation {
-    font-family: Helvetica, Arial, sans-serif;
-    text-align: left;
-    color: #888;
-    font-size: 0.8em;
-    width: 100%;
+}
+
+.audio {
+  float: left;
+
+  .bi-play {
     border-left: 5px solid #bbb;
-  
-    table {
-      tr {
-        div:nth-child(odd) {
-          padding: 0 0 0 1em;
-          background-color: #f4f4f4;
-        }
-  
-        div:nth-child(even) {
-          padding: 0 0 0 1em;
-          background-color: #e8e8e8;
-        }
-      }
-    }
   }
-  
-  .chat-message:nth-child(odd) {
-    .chat-user {
-      color: #cc0000;
-      font-weight: bold;
-    }
-  }
-  
-  .chat-message:nth-child(even) {
-    .chat-user {
-      color: #0003cc;
-      font-weight: bold;
-    }
-  }
-  
-  .conversation-name {}
-  
-  .conversation-phrase {}
-  
-  .audio {
-    float: left;
-  
-    .bi-play {
-      border-left: 5px solid #bbb;
-    }
-  
-    table {
-      padding-top: 0em;
-      text-align: left;
-      width: 200px;
-      background-color: #e8e8e8;
-      color: #444;
-      font-weight: bolder;
-      font-size: smaller;
-      align-items: center;
-    }
-  }
-  
-  .audio-player {
-    position: relative;
-    height: 30px;
-  }
-  
-  .audio-caption {
-    padding-left: 1em;
-  }
-  
-  .regular {
+
+  table {
+    padding-top: 0em;
     text-align: left;
-  }
-  
-  .regular-title {
-    text-align: left;
+    width: 200px;
+    background-color: #e8e8e8;
+    color: #444;
     font-weight: bolder;
-    color: #6498cc;
+    font-size: smaller;
+    align-items: center;
   }
-  
-  .regular-body {
-    font-size: small;
-    text-align: left;
-  
+}
+
+.audio-player {
+  position: relative;
+  height: 30px;
+}
+
+.audio-caption {
+  padding-left: 1em;
+}
+
+.regular {
+  text-align: left;
+}
+
+.regular-title {
+  text-align: left;
+  font-weight: bolder;
+  color: #6498cc;
+}
+
+.regular-body {
+  font-size: small;
+  text-align: left;
+
+  a {
+    color: #cc0000;
+  }
+
+  p {
     a {
       color: #cc0000;
     }
-  
-    p {
-      a {
-        color: #cc0000;
-      }
-  
-      a:link,
-      a:hover,
-      a:visited,
-      a:active {
-        text-decoration: underline;
-      }
+
+    a:link,
+    a:hover,
+    a:visited,
+    a:active {
+      text-decoration: underline;
     }
   }
-  
-  .quote {}
-  
-  
-  .datebox {
-    display: grid;
-    width: 200px;
-    height: 35px;
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-    left: -180px;
-    top: 35px;
-    line-height: 1;
-  }
-  
-  .datebox-month {
-    width: 50px;
-    height: 35px;
-    font-weight: bold;
-    font-size: 14px;
-    text-align: center;
-    padding-top: 4px;
-    color: #bbd5f1;
-    background-color: #6498cc;
-  }
-  
-  .datebox-weekday {
-    height: 30px;
-    float: center;
-    vertical-align: middle;
-    color: #ccc;
-    font-size: 35px;
-    line-height: 1;
-  }
-  
-  
-  .open-details-button {
-    position: absolute;
-    float: right;
-    display: contents;
-    width: 20px;
-    height: 35px;
-    grid-template-columns: 1fr 1fr;
-    left: 500px;
-    top: -350px;
-    line-height: 1;
-  
-    img {
-      float: right;
-      width: 14px;
-    }
-    
-  }
+}
+
+.datebox {
+  display: grid;
+  width: 200px;
+  height: 35px;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  left: -180px;
+  top: 35px;
+  line-height: 1;
+}
+
+.datebox-month {
+  width: 50px;
+  height: 35px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 4px;
+  color: #bbd5f1;
+  background-color: #6498cc;
+}
+
+.datebox-weekday {
+  height: 30px;
+  float: center;
+  vertical-align: middle;
+  color: #ccc;
+  font-size: 35px;
+  line-height: 1;
+}

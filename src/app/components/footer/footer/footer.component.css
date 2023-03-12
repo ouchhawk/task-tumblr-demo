@@ -1,10 +1,9 @@
 .footer {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-family: Georgia, "Times New Roman", Times, serif;
   letter-spacing: -0.5px;
   font-size: small;
-  
 }
 
 .footer a:active {
@@ -27,15 +26,10 @@
   float: center;
   display: grid;
   grid-template-columns: 6fr 2fr 2fr 1fr;
-  justify-items: center;
   font-weight: bolder;
-  font-size: small;
   margin: 5px;
   z-index: 2;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 650px;
   padding-left: 25px;
   padding-top: 15px;

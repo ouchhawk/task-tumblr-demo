@@ -4,9 +4,6 @@
   color: #444;
 
   a {
-    font-size: 50px;
-    font-weight: bold;
-    color: #444;
     text-decoration: unset;
   }
 }
@@ -25,12 +22,11 @@
   grid-column-start: 2;
   width: 420px;
   height: auto;
-  padding-bottom: 25px;
 }
 
 .datebox {
   display: grid;
-  width: 200px;
+  width: 182px;
   height: 35px;
   grid-template-columns: 1fr 1fr;
   position: relative;
@@ -59,7 +55,7 @@
   line-height: 1;
 }
 
-.post-modal-button {
+.show-modal-button {
   position: absolute;
   float: right;
   display: contents;
@@ -76,12 +72,12 @@
   }
 }
 
-.post-modal{
+.post-modal {
   background-color: #ccc;
-  opacity:1;
+  opacity: 1;
 }
 
-.modal{
+.modal {
   float: center;
   display: grid;
   grid-template-columns: 6fr 2fr 2fr 1fr;
@@ -91,16 +87,12 @@
   margin: 5px;
   z-index: 2;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 6500px;
   padding-left: 25px;
   padding-top: 15px;
   color: #ffffff;
   background-color: #7c5cff;
   top: 100%;
-  left: 50%;
   margin-top: -100px;
   margin-left: -346px;
 }
@@ -109,27 +101,29 @@
   background-color: #292b2c;
   color: white;
 }
+
 .dark-modal .close {
   color: white;
 }
+
 .light-blue-backdrop {
   background-color: #5cb3fd;
 }
 
-.blog-description-form{
+.blog-description-form {
   position: relative;
-  left:689px;
-  top:35px;
-  width:147px;
+  left: 689px;
+  top: 35px;
+  width: 147px;
   line-height: normal;
   text-align: right;
 }
 
-.search-box{
-  position:relative;
+.search-box {
+  position: relative;
   width: 166px;
 }
 
-.search-button{
-  border-width:thin;
+.search-button {
+  border-width: thin;
 }

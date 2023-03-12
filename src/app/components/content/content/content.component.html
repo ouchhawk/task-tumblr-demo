@@ -6,21 +6,18 @@
   <div class="post-container">
 
     <!-- blog description -->
-
-<div >
-  <form action="" class="blog-description-form">
-    <input class="search-box" type="text" placeholder="">
-    <button class="search-button">Search</button>
-    <div [innerHTML]="root.tumblelog.description"></div>
-    <br>
-    <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
-  </form>
-</div>
-
+    <div>
+      <form action="" class="blog-description-form">
+        <input class="search-box" type="text" placeholder="">
+        <button class="search-button">Search</button>
+        <div [innerHTML]="root.tumblelog.description"></div>
+        <br>
+        <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
+      </form>
+    </div>
 
     <div class="post-content" *ngFor="let post of posts; let i = index" (mouseenter)="isModalButtonVisible[i] = true"
       (mouseleave)="isModalButtonVisible[i] = false">
-
       <!-- date box -->
       <div *ngIf="post['is-date-visible']" class="datebox">
         <div class="datebox-weekday">
@@ -36,30 +33,20 @@
         </div>
       </div>
 
-      <!-- post component -->
-      <app-post [index]=i [post]=post></app-post>
-
-      <!-- modal -->
+      <!-- modal button -->
       <div *ngIf="isModalButtonVisible[i]" style="visibility:visible;">
-        <button *ngIf="isModalVisible" class="btn btn-outline-primary mb-2 me-2 post-modal-button"
+        <button *ngIf="isModalVisible" class="btn btn-outline-primary mb-2 me-2 show-modal-button"
           (click)="onClickShowModal(i)"><img src="https://static.tumblr.com/vr9xgox/NoWnf8zop/permalink.gif"
             alt="open content" /></button>
       </div>
       <div *ngIf="!isModalButtonVisible[i]" style="visibility:hidden">
-        <button *ngIf="isModalVisible" class="btn btn-outline-primary mb-2 me-2 post-modal-button"
+        <button *ngIf="isModalVisible" class="btn btn-outline-primary mb-2 me-2 show-modal-button"
           (click)="onClickShowModal(i)"><img src="https://static.tumblr.com/vr9xgox/NoWnf8zop/permalink.gif"
             alt="open content" /></button>
       </div>
 
-      
-
-
-
+      <!-- post component -->
+      <app-post [index]=i [post]=post></app-post>
     </div>
-
-
-
   </div>
-  
-  
 </div>
