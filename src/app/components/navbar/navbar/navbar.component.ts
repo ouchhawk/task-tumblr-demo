@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Post } from 'src/app/models/post';
 import { PostResponseModel } from 'src/app/models/postResponseModel';
 import { Root } from 'src/app/models/root';
+import { HelperService } from 'src/app/services/helper.service';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -22,14 +23,14 @@ export class NavbarComponent {
     success: true,
   };
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService, private helperService: HelperService) {}
 
   ngOnInit(): void {
     this.getPosts();
   }
 
   getPosts() {
-    this.postService.getRawData().subscribe((response) => {
+    this.helperService.getRawData().subscribe((response) => {
       this.text = response;
       this.root = JSON.parse(this.text.substring(22, 27765));
     });

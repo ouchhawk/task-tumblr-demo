@@ -4,6 +4,23 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   letter-spacing: -0.5px;
   font-size: small;
+  
+}
+
+.footer a:active {
+  text-decoration:none;
+}
+
+.footer a:visited {
+  text-decoration:none;
+}
+
+.footer a:link {
+  text-decoration:none;
+}
+
+.footer a:hover {
+  text-decoration:underline;
 }
 
 .banner {
@@ -36,6 +53,7 @@
 }
 
 .banner-content {
+  width: 300px;
   font-size: 15px;
 }
 

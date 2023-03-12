@@ -4,21 +4,24 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Post } from '../models/post';
 import { Root } from '../models/root';
+import { PostTypeEnum } from '../enums/post-type-enum';
+import { FormGroup } from '@angular/forms';
+import { HelperService } from './helper.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private helperService: HelperService) { }
+  posts: Post[] = [];
+  root: Root;
 
-  apiUrl = '/api/read/json';
+  
 
-  getRawData(): Observable<any> {
-    return this.httpClient.get(this.apiUrl, { responseType: 'text' });
-  }
-
-  getPosts(): Observable<Root> {
-    console.log(this.httpClient.get<Root>(this.apiUrl));
-    return this.httpClient.get<Root>(this.apiUrl);
-  }
+  
 }
+
+
+
+
+
