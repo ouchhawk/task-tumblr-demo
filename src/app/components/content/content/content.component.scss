@@ -20,8 +20,13 @@
 }
 
 .post-container {
+  margin-top: -234px;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+}
+
+@media (max-width: 600px) {
+  .post-container { grid-template-columns: 0fr 1fr 0fr; }
 }
 
 .post-content {
@@ -118,8 +123,8 @@
 
 .blog-description-form {
   position: relative;
-  left: 689px;
-  top: 35px;
+  left: 494px;
+  top: 281px;
   width: 147px;
   line-height: normal;
   text-align: right;

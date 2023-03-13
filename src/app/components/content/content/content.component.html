@@ -1,28 +1,30 @@
 <div class="container">
-  <h1>
+  <h2>
     <b class="title">
       <a href="/">{{ root.tumblelog.title }} ({{this.postCount}}) </a>
     </b>
-  </h1>
+  </h2>
   <a href="https://demo.tumblr.com/rss" alt="rss" class="rss-button">
   <img src="https://static.tumblr.com/vr9xgox/oiLnf8zpv/rss.gif" alt="rss" >
 </a>
   <hr />
   <div class="post-container">
 
-    <!-- blog description -->
-    <div>
-      <form action="" class="blog-description-form">
-        <input class="search-box" type="text" placeholder="">
-        <button class="search-button">Search</button>
-        <div [innerHTML]="root.tumblelog.description"></div>
-        <br>
-        <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
-      </form>
-    </div>
+    
 
     <div class="post-content" *ngFor="let post of posts; let i = index" (mouseenter)="isModalButtonVisible[i] = true"
       (mouseleave)="isModalButtonVisible[i] = false">
+
+      <!-- blog description -->
+        <form *ngIf="i===0"  action="" class="blog-description-form">
+          <input class="search-box" type="text" placeholder="">
+          <button class="search-button">Search</button>
+          <div [innerHTML]="root.tumblelog.description"></div>
+          <br>
+          <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
+        </form>
+      
+
       <!-- date box -->
       <div *ngIf="post['is-date-visible']" class="datebox">
         <div class="datebox-weekday">
@@ -38,7 +40,7 @@
         </div>
       </div>
 
-      <!-- modal button -->
+      <!-- arrow button -->
       <div *ngIf="isModalButtonVisible[i]" style="visibility:visible;">
         <button *ngIf="isModalVisible" class="btn btn-outline-primary mb-2 me-2 show-modal-button"
           (click)="onClickShowModal(i)"><img src="https://static.tumblr.com/vr9xgox/NoWnf8zop/permalink.gif"
@@ -51,7 +53,10 @@
       </div>
 
       <!-- post component -->
-      <app-post [index]=i [post]=post></app-post>
+      <div>
+        <app-post [index]=i [post]=post></app-post>
+      </div>
+      
 
       <!-- modal button -->
       <div style="visibility:visible;">
