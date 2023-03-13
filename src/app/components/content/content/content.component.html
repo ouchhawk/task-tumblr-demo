@@ -1,7 +1,12 @@
 <div class="container">
-  <b class="title">
-    <a href="/">{{ root.tumblelog.title }} ({{this.postCount}}) </a>
-  </b>
+  <h1>
+    <b class="title">
+      <a href="/">{{ root.tumblelog.title }} ({{this.postCount}}) </a>
+    </b>
+  </h1>
+  <a href="https://demo.tumblr.com/rss" alt="rss" class="rss-button">
+  <img src="https://static.tumblr.com/vr9xgox/oiLnf8zpv/rss.gif" alt="rss" >
+</a>
   <hr />
   <div class="post-container">
 
@@ -49,9 +54,8 @@
       <app-post [index]=i [post]=post></app-post>
 
       <!-- modal button -->
-      <div  style="visibility:visible;">
-        <button  class="btn btn-outline-primary mb-2 me-2"
-          (click)="onClickShowModal(i)">Open Modal</button>
+      <div style="visibility:visible;">
+        <button class="btn btn-outline-primary mb-2 me-2" (click)="onClickShowModal(i)">Open Modal</button>
       </div>
       <hr>
 
