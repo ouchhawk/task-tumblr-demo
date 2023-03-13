@@ -15,10 +15,6 @@ export class PostService {
   constructor(private httpClient: HttpClient, private helperService: HelperService) { }
   posts: Post[] = [];
   root: Root;
-
-  
-
-  
 }
 
 

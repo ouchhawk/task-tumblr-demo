@@ -60,13 +60,9 @@ export class HelperService {
       } else {
         post['is-date-visible'] = true;
       }
-
       previousMonth = post['month'];
       previousDay = post['day'];
-
     })
   };
-
-
 }
 

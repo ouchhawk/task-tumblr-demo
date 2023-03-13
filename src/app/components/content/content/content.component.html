@@ -1,29 +1,25 @@
 <div class="container">
   <h2>
     <b class="title">
-      <a href="/">{{ root.tumblelog.title }} ({{this.postCount}}) </a>
+      <a href="/">{{ this.root?.tumblelog?.title }} ({{this.postCount}}) </a>
     </b>
   </h2>
   <a href="https://demo.tumblr.com/rss" alt="rss" class="rss-button">
-  <img src="https://static.tumblr.com/vr9xgox/oiLnf8zpv/rss.gif" alt="rss" >
-</a>
+    <img src="https://static.tumblr.com/vr9xgox/oiLnf8zpv/rss.gif" alt="rss">
+  </a>
   <hr />
   <div class="post-container">
-
-    
-
     <div class="post-content" *ngFor="let post of posts; let i = index" (mouseenter)="isModalButtonVisible[i] = true"
       (mouseleave)="isModalButtonVisible[i] = false">
 
       <!-- blog description -->
-        <form *ngIf="i===0"  action="" class="blog-description-form">
-          <input class="search-box" type="text" placeholder="">
-          <button class="search-button">Search</button>
-          <div [innerHTML]="root.tumblelog.description"></div>
-          <br>
-          <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
-        </form>
-      
+      <form *ngIf="i===0" action="" class="blog-description-form">
+        <input class="search-box" type="text" placeholder="">
+        <button class="search-button">Search</button>
+        <div [innerHTML]="this.root?.tumblelog?.description"></div>
+        <br>
+        <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
+      </form>
 
       <!-- date box -->
       <div *ngIf="post['is-date-visible']" class="datebox">
@@ -56,7 +52,6 @@
       <div>
         <app-post [index]=i [post]=post></app-post>
       </div>
-      
 
       <!-- modal button -->
       <div style="visibility:visible;">

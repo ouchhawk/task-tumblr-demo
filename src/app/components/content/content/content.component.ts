@@ -21,7 +21,7 @@ export class ContentComponent implements OnInit {
   posts: Post[] = [];
   dates: any[] = [];
   rootUrl: string = "localhost:4200";
-  root: Root;
+  root: Root | undefined;
   postTypeEnum: PostTypeEnum = 0;
   count: number = 0;
   isModalButtonVisible: boolean[] = [false];
@@ -50,8 +50,6 @@ export class ContentComponent implements OnInit {
   getRoot(): Observable<Root> {
     return this.helperService.getRawData().pipe(
       map(response => {
-        console.log(this.helperService.parseApiStringToJson(response));
-
         return this.helperService.parseApiStringToJson(response);
       })
     );
@@ -74,10 +72,8 @@ export class ContentComponent implements OnInit {
       } else {
         post['is-date-visible'] = true;
       }
-
       previousMonth = post['month'];
       previousDay = post['day'];
-
     })
   };
 }

@@ -25,3 +25,9 @@ p > a:hover {
   color:#6498cc;
   text-decoration: underline;
 }
+
+.blockquote {
+  font-style: italic;
+  border-left: solid 2px #444;
+  padding-left: 10px;
+}
