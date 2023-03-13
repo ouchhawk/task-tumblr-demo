@@ -1,6 +1,6 @@
 <div class="container">
   <b class="title">
-    <a href="/">{{ root.tumblelog.title }}</a>
+    <a href="/">{{ root.tumblelog.title }} ({{this.postCount}}) </a>
   </b>
   <hr />
   <div class="post-container">
@@ -47,6 +47,14 @@
 
       <!-- post component -->
       <app-post [index]=i [post]=post></app-post>
+
+      <!-- modal button -->
+      <div  style="visibility:visible;">
+        <button  class="btn btn-outline-primary mb-2 me-2"
+          (click)="onClickShowModal(i)">Open Modal</button>
+      </div>
+      <hr>
+
     </div>
   </div>
 </div>

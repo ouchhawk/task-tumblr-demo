@@ -11,7 +11,6 @@
 </div>
 
 <!-- photo -->
-<div>
     <div class="photo" *ngIf="post.type === 'photo'">
         <div>
             <a href="https://demo.tumblr.com/image/{{ post.id }}" target="_blank">
@@ -20,7 +19,6 @@
         </div>
         <div class="photo-caption" [innerHTML]="post['photo-caption']"></div>
     </div>
-</div>
 
 <!-- link -->
 <div *ngIf="post.type === 'link'">
@@ -73,7 +71,6 @@
     </div>
 </div>
 
-
-
-
-
+<div class="post-release-date">
+    {{dateDMYFormat}}
+</div>

@@ -104,11 +104,7 @@
 }
 
 .audio {
-  float: left;
-
-  .bi-play {
-    border-left: 5px solid #bbb;
-  }
+  text-align: left;
 
   table {
     padding-top: 0em;
@@ -192,4 +188,9 @@
   color: #ccc;
   font-size: 35px;
   line-height: 1;
+}
+
+.post-release-date{
+  margin-top: 50px;
+  font-size: small;
 }

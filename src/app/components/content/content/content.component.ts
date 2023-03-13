@@ -27,6 +27,7 @@ export class ContentComponent implements OnInit {
   isModalButtonVisible: boolean[] = [false];
   isModalVisible: boolean[] = [false];
   postForm: FormGroup;
+  postCount: number;
 
   postResponseModel: PostResponseModel = {
     data: this.posts,
@@ -40,6 +41,7 @@ export class ContentComponent implements OnInit {
     this.getRoot().subscribe(root => {
       this.root = root;
       this.posts = root.posts;
+      this.postCount=root['posts-total'];
       this.helperService.parseAndAssignDates(this.posts);
       this.helperService.categorizePostsByDate(this.posts);
     });

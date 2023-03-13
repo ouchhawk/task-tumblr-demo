@@ -15,7 +15,7 @@ export class NavbarComponent {
   exploreUrl:string="https://www.tumblr.com/explore/today";
   text: string = '';
   posts: Post[] = [];
-  root: Root | undefined;
+  root: Root;
 
   postResponseModel: PostResponseModel = {
     data: this.posts,
