@@ -4,12 +4,12 @@ import { HelperService } from 'src/app/services/helper.service';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.scss'],
+  selector: 'app-container',
+  templateUrl: './container.component.html',
+  styleUrls: ['./container.component.scss'],
 
 })
-export class ContentComponent implements OnInit {
+export class ContainerComponent implements OnInit {
   root: Root;
 
   constructor(private postService: PostService, private helperService: HelperService) { }

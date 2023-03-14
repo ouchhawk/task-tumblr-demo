@@ -3,7 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Post } from 'src/app/models/post';
 import { HelperService } from 'src/app/services/helper.service';
 import { PostService } from 'src/app/services/post.service';
-import { PostComponent } from '../post/post/post.component';
+import { PostComponent } from '../post/post.component';
 
 @Component({
   selector: 'app-post-content',

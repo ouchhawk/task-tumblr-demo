@@ -5,7 +5,7 @@ import { Post } from 'src/app/models/post';
 import { Root } from 'src/app/models/root';
 import { HelperService } from 'src/app/services/helper.service';
 import { PostService } from 'src/app/services/post.service';
-import { PostContentComponent } from '../../post-content/post-content.component';
+import { PostContentComponent } from '../post-content/post-content.component';
 
 @Component({
   selector: 'app-post',

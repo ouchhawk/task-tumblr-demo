@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Post } from '../models/post';
 import { Root } from '../models/root';
 import { HelperService } from './helper.service';
 import { map, Observable } from 'rxjs';
