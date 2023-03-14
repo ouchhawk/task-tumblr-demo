@@ -1,167 +1,7 @@
-.quote-text {
-  text-align: left;
-  line-height: normal;
-  font-size: 36px;
-  font-weight: bold;
-  padding-left: 10px;
-  border-collapse: collapse;
-  width: 100%;
-  border-left: 5px solid #6498cc;
-  color: #888;
-
-  a,
-  a:hover,
-  a:visited {
-    float: left;
-    color: #cc0000;
-    font-weight: bold;
-  }
-}
-
-.quote-source {
-  float: left;
-  font-size: 1em;
-  font-weight: bold;
-  color: #444;
-}
-
-.photo {
-  float: left;
-  padding-bottom: 20px;
-}
-
-.photo-source {
-  width: 416px;
-  margin-bottom: 11px;
-}
-
-.photo-caption {
-  font-size: 0.8em;
-  font-weight: bold;
-  color: #444;
-
-  a:visited {
-    text-decoration: underline;
-    font-size: 0.8em;
-    font-weight: bold;
-    color: #444;
-  }
-}
-
-.link {
-  a {
-    text-decoration: underline;
-    float: left;
-    color: #cc0000;
-    font-weight: bold;
-  }
-}
-
-.link-description {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: small;
-  font-weight: 300;
-  text-align: left;
-  letter-spacing: -1px;
-}
-
-.conversation {
-  font-family: Helvetica, Arial, sans-serif;
-  text-align: left;
-  color: #888;
-  font-size: 0.8em;
-  border-left: 5px solid #bbb;
-
-  table {
-    width: 415px;
-
-    tr {
-      div:nth-child(odd) {
-        padding: 0 0 0 1em;
-        background-color: #f4f4f4;
-      }
-
-      div:nth-child(even) {
-        padding: 0 0 0 1em;
-        background-color: #e8e8e8;
-      }
-    }
-  }
-}
-
-.chat-message:nth-child(odd) {
-  .chat-user {
-    color: #cc0000;
-    font-weight: bold;
-  }
-}
-
-.chat-message:nth-child(even) {
-  .chat-user {
-    color: #0003cc;
-    font-weight: bold;
-  }
-}
-
-.audio {
-  text-align: left;
-
-  table {
-    padding-top: 0em;
-    text-align: left;
-    width: 200px;
-    background-color: #e8e8e8;
-    color: #444;
-    font-weight: bolder;
-    font-size: smaller;
-    align-items: center;
-  }
-}
-
-.audio-player {
-  position: relative;
-  height: 30px;
-}
-
-.audio-caption {
-  padding-left: 1em;
-}
-
-.regular {
-  text-align: left;
-}
-
-.regular-title {
-  text-align: left;
-  font-weight: bolder;
-  color: #6498cc;
-}
-
-.regular-body {
-  font-size: small;
-  text-align: left;
-
-  a {
-    color: #cc0000;
-  }
-
-  p {
-    a {
-      color: #cc0000;
-    }
-
-    a:link,
-    a:hover,
-    a:visited,
-    a:active {
-      text-decoration: underline;
-    }
-  }
-}
 
 .datebox {
   display: grid;
-  width: 200px;
+  width: 182px;
   height: 35px;
   grid-template-columns: 1fr 1fr;
   position: relative;
@@ -190,7 +30,42 @@
   line-height: 1;
 }
 
+
+// .datebox {
+//   display: grid;
+//   width: 200px;
+//   height: 35px;
+//   grid-template-columns: 1fr 1fr;
+//   position: relative;
+//   left: -180px;
+//   top: 35px;
+//   line-height: 1;
+// }
+
+// .datebox-month {
+//   width: 50px;
+//   height: 35px;
+//   font-weight: bold;
+//   font-size: 14px;
+//   text-align: center;
+//   padding-top: 4px;
+//   color: #bbd5f1;
+//   background-color: #6498cc;
+// }
+
+// .datebox-weekday {
+//   height: 30px;
+//   float: center;
+//   vertical-align: middle;
+//   color: #ccc;
+//   font-size: 35px;
+//   line-height: 1;
+// }
+
 .post-release-date{
-  margin-top: 50px;
   font-size: small;
+}
+
+.inactive{
+  display: none;
 }

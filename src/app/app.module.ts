@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer/footer.component';
@@ -9,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './components/post/post/post.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PostContentComponent } from './components/post-content/post-content.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ContentComponent,
     NavbarComponent,
     PostComponent,
+    PostContentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],

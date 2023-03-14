@@ -1,19 +1,26 @@
 <div class="container">
-  <h2>
+  <h1>
     <b class="title">
-      <a href="/">{{ this.root?.tumblelog?.title }} ({{this.postCount}}) </a>
+      <a href="/">{{ this.root?.tumblelog?.title }} ({{this.root['posts-total']}}) </a>
     </b>
-  </h2>
+  </h1>
+
   <a href="https://demo.tumblr.com/rss" alt="rss" class="rss-button">
     <img src="https://static.tumblr.com/vr9xgox/oiLnf8zpv/rss.gif" alt="rss">
   </a>
+
   <hr />
+
+
+
   <div class="post-container">
-    <div class="post-content" *ngFor="let post of posts; let i = index" (mouseenter)="isModalButtonVisible[i] = true"
-      (mouseleave)="isModalButtonVisible[i] = false">
+    <div class="post-content">
+
+      
+
 
       <!-- blog description -->
-      <form *ngIf="i===0" action="" class="blog-description-form">
+      <form action="" class="blog-description-form">
         <input class="search-box" type="text" placeholder="">
         <button class="search-button">Search</button>
         <div [innerHTML]="this.root?.tumblelog?.description"></div>
@@ -21,44 +28,7 @@
         <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
       </form>
 
-      <!-- date box -->
-      <div *ngIf="post['is-date-visible']" class="datebox">
-        <div class="datebox-weekday">
-          {{ post["weekday"] }}
-        </div>
-        <div class="datebox-month">
-          <div>
-            {{ post["month"] }}
-          </div>
-          <div>
-            {{ post["day"] }}
-          </div>
-        </div>
-      </div>
-
-      <!-- arrow button -->
-      <div *ngIf="isModalButtonVisible[i]" style="visibility:visible;">
-        <button *ngIf="isModalVisible" class="btn btn-outline-primary mb-2 me-2 show-modal-button"
-          (click)="onClickShowModal(i)"><img src="https://static.tumblr.com/vr9xgox/NoWnf8zop/permalink.gif"
-            alt="open content" /></button>
-      </div>
-      <div *ngIf="!isModalButtonVisible[i]" style="visibility:hidden">
-        <button *ngIf="isModalVisible" class="btn btn-outline-primary mb-2 me-2 show-modal-button"
-          (click)="onClickShowModal(i)"><img src="https://static.tumblr.com/vr9xgox/NoWnf8zop/permalink.gif"
-            alt="open content" /></button>
-      </div>
-
-      <!-- post component -->
-      <div>
-        <app-post [index]=i [post]=post></app-post>
-      </div>
-
-      <!-- modal button -->
-      <div style="visibility:visible;">
-        <button class="btn btn-outline-primary mb-2 me-2" (click)="onClickShowModal(i)">Open Modal</button>
-      </div>
-      <hr>
-
+      <app-post></app-post>
     </div>
   </div>
 </div>

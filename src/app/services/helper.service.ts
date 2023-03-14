@@ -7,15 +7,9 @@ import { Post } from '../models/post';
   providedIn: 'root'
 })
 export class HelperService {
-
-  constructor(private httpClient: HttpClient) { }
-
-  apiUrl = '/api/read/json';
   posts: Post[] = [];
 
-  getRawData(): Observable<any> {
-    return this.httpClient.get(this.apiUrl, { responseType: 'text' });
-  }
+  constructor(private httpClient: HttpClient) { }
 
   parseAndAssignDates(posts: Post[]) {
     const weekdayStartIndex = 0;
@@ -43,7 +37,7 @@ export class HelperService {
     })
   }
 
-  parseApiStringToJson(apiString: String) {
+  parseApiStringToJson(apiString: string) {
     const startIndex = apiString.indexOf('{');
     const endIndex = apiString.lastIndexOf(';');
     const selectedString = apiString.substring(startIndex, endIndex);
@@ -64,5 +58,13 @@ export class HelperService {
       previousDay = post['day'];
     })
   };
+
+  formatDateDMY(date: string) {
+    const spaceIndex = date.indexOf(' ');
+    const selectedString = date.substring(0, spaceIndex);
+    const parsedDate = selectedString.split("-", 3);
+    let formattedDate: string = '(' + parsedDate[2] + '/' + parsedDate[1] + '/' + parsedDate[0] + ')';
+    return formattedDate;
+  }
 }
 

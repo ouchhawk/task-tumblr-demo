@@ -35,92 +35,6 @@
   height: auto;
 }
 
-.datebox {
-  display: grid;
-  width: 182px;
-  height: 35px;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  left: -180px;
-  top: 35px;
-  line-height: 1;
-}
-
-.datebox-month {
-  width: 50px;
-  height: 35px;
-  font-weight: bold;
-  font-size: 14px;
-  text-align: center;
-  padding-top: 4px;
-  color: #bbd5f1;
-  background-color: #6498cc;
-}
-
-.datebox-weekday {
-  height: 30px;
-  float: center;
-  vertical-align: middle;
-  color: #ccc;
-  font-size: 35px;
-  line-height: 1;
-}
-
-.show-modal-button {
-  position: absolute;
-  float: right;
-  display: contents;
-  width: 20px;
-  height: 35px;
-  grid-template-columns: 1fr 1fr;
-  left: 500px;
-  top: -350px;
-  line-height: 1;
-
-  img {
-    float: right;
-    width: 14px;
-  }
-}
-
-.post-modal {
-  background-color: #ccc;
-  opacity: 1;
-}
-
-.modal {
-  float: center;
-  display: grid;
-  grid-template-columns: 6fr 2fr 2fr 1fr;
-  justify-items: center;
-  font-weight: bolder;
-  font-size: small;
-  margin: 5px;
-  z-index: 2;
-  position: fixed;
-  width: 6500px;
-  padding-left: 25px;
-  padding-top: 15px;
-  color: #ffffff;
-  background-color: #7c5cff;
-  top: 100%;
-  margin-top: -100px;
-  margin-left: -346px;
-}
-
-.dark-modal .modal-content {
-  background-color: #292b2c;
-  color: white;
-}
-
-.dark-modal .close {
-  color: white;
-}
-
-.light-blue-backdrop {
-  background-color: #5cb3fd;
-}
-
 .blog-description-form {
   position: relative;
   left: 494px;
@@ -128,13 +42,4 @@
   width: 147px;
   line-height: normal;
   text-align: right;
-}
-
-.search-box {
-  position: relative;
-  width: 166px;
-}
-
-.search-button {
-  border-width: thin;
 }

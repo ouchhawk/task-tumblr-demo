@@ -79,4 +79,5 @@ export interface Post {
   'day':string;
   'weekday':string;
   'month':string;
+  dateDMYFormat:string;
 }
