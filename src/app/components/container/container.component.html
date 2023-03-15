@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="this.root?.tumblelog?.title">
   <div class="header">
     <h1 class="title">
       <a href="/">{{ this.root.tumblelog.title }} ({{this.root['posts-total']}}) </a>
