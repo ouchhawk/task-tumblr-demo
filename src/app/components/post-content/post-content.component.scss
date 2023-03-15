@@ -1,27 +1,9 @@
-.show-arrow-button {
-  position: absolute;
-  float: right;
-  display: contents;
-  width: 20px;
-  height: 35px;
-  grid-template-columns: 1fr 1fr;
-  left: 500px;
-  top: -350px;
-  line-height: 1;
-
-  img {
-    float: right;
-    width: 14px;
-  }
-}
-
 .post-modal {
   background-color: #ccc;
   opacity: 1;
 }
 
 .modal {
-  float: center;
   display: grid;
   grid-template-columns: 6fr 2fr 2fr 1fr;
   justify-items: center;
@@ -33,21 +15,24 @@
   width: 6500px;
   padding-left: 25px;
   padding-top: 15px;
-  color: #ffffff;
+  color: #fff;
   background-color: #7c5cff;
   top: 100%;
   margin-top: -100px;
   margin-left: -346px;
 }
 
-.dark-modal .modal-content {
-  background-color: #292b2c;
-  color: white;
+.dark-modal {
+  .modal-content {
+    background-color: #292b2c;
+    color: white;}
+
+  .close {
+    color: white;
+  }
 }
 
-.dark-modal .close {
-  color: white;
-}
+.dark-modal 
 
 .light-blue-backdrop {
   background-color: #5cb3fd;
@@ -63,7 +48,6 @@
 }
 
 .quote-text {
-  text-align: left;
   line-height: normal;
   font-size: 36px;
   font-weight: bold;
@@ -76,21 +60,18 @@
   a,
   a:hover,
   a:visited {
-    float: left;
     color: #cc0000;
     font-weight: bold;
   }
 }
 
 .quote-source {
-  float: left;
   font-size: 1em;
   font-weight: bold;
   color: #444;
 }
 
 .photo {
-  float: left;
   padding-bottom: 20px;
 }
 
@@ -115,7 +96,6 @@
 .link {
   a {
     text-decoration: underline;
-    float: left;
     color: #cc0000;
     font-weight: bold;
   }
@@ -125,7 +105,6 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: small;
   font-weight: 300;
-  text-align: left;
   letter-spacing: -1px;
 }
 
@@ -172,7 +151,6 @@
 
   table {
     padding-top: 0em;
-    text-align: left;
     width: 200px;
     background-color: #e8e8e8;
     color: #444;
@@ -192,34 +170,13 @@
 }
 
 .regular {
-  text-align: left;
-}
-
-.regular-title {
-  text-align: left;
-  font-weight: bolder;
-  color: #6498cc;
-}
-
-.regular-body {
-  font-size: small;
-  text-align: left;
-
-  a {
-    color: #cc0000;
+  .regular-title {
+    font-weight: bolder;
+    color: #6498cc;
   }
 
-  p {
-    a {
-      color: #cc0000;
-    }
-
-    a:link,
-    a:hover,
-    a:visited,
-    a:active {
-      text-decoration: underline;
-    }
+  .regular-body {
+    font-size: small;
   }
 }
 

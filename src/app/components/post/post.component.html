@@ -1,5 +1,4 @@
-<div *ngFor="let post of this.posts; let i = index" (mouseenter)="isArrowButtonVisible[i] = true"
-    (mouseleave)="isArrowButtonVisible[i] = false">
+<div *ngFor="let post of this.posts; let i = index"class="post">
     <!-- date box -->
     <div *ngIf="post['is-date-visible']" class="datebox">
         <div class="datebox-weekday">
@@ -18,18 +17,12 @@
     <app-post-content [post]="post"></app-post-content>
 
     <div>
-        <button class="btn btn-outline-primary mb-2 me-2" (click)="onClickShowModal(i)">Open Modal</button>
+        <button class="btn btn-outline-primary mb-2 me-2" (click)="onClickShowModal(post.id)">Open Modal</button>
     </div>
-
 
     <!-- arrow button  -->
-    <div *ngIf="isArrowButtonVisible[i]" style="visibility:visible">
-
-        <button class="btn btn-outline-primary mb-2 me-2 show-arrow-button" (click)="setCurrentPost(i)"><img
-                src="https://static.tumblr.com/vr9xgox/NoWnf8zop/permalink.gif" alt="open content" /></button>
-    </div>
-    <div *ngIf="!isArrowButtonVisible[i]" style="visibility:hidden">
-        <button class="btn btn-outline-primary mb-2 me-2 show-arrow-button" (click)="setCurrentPost(i)"><img
+    <div class="post-link">
+        <button class="btn show-arrow-button" (click)="setCurrentPost(post.id)"><img
                 src="https://static.tumblr.com/vr9xgox/NoWnf8zop/permalink.gif" alt="open content" /></button>
     </div>
 

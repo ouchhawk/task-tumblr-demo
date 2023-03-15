@@ -66,10 +66,8 @@
 
 <!-- regular -->
 <div *ngIf="post.type === 'regular'">
-    <div>
-        <div class="regular-title" [innerHTML]="post['regular-title']"></div>
-        <div class="regular-body" [innerHTML]="post['regular-body']"></div>
-    </div>
+    <div class="regular-title" [innerHTML]="post['regular-title']"></div>
+    <div class="regular-body" [innerHTML]="post['regular-body']"></div>
 </div>
 
 <div class="post-release-date">
@@ -77,5 +75,6 @@
 </div>
 
 <div>
-    <button class="btn btn-outline-primary mb-2 me-2 + {{changeCurrentPostClass(post)}}" (click)="onClickShowModal()">Open Modal</button>
+    <button class="btn btn-outline-primary mb-2 me-2 + {{changeCurrentPostClass(post)}}"
+        (click)="onClickShowModal()">Open Modal</button>
 </div>

@@ -5,7 +5,7 @@ body {
 }
 
 a, a:hover, a:visited, a:link, a:active {
-  color:#444444;
+  color:#444;
   text-decoration: underline;
 }
 

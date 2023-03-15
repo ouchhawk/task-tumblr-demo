@@ -1,3 +1,19 @@
+.post{
+  position: relative;
+
+  .post-link{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    visibility: hidden;
+  }
+}
+
+.post:hover{
+  .post-link{
+    visibility:visible;
+  }
+}
 
 .datebox {
   display: grid;
@@ -8,59 +24,26 @@
   left: -180px;
   top: 35px;
   line-height: 1;
+
+  .datebox-weekday {
+    height: 30px;
+    vertical-align: middle;
+    color: #ccc;
+    font-size: 35px;
+    line-height: 1;
+  }
+
+  .datebox-month {
+    width: 50px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 4px;
+    color: #bbd5f1;
+    background-color: #6498cc;
+  }
 }
-
-.datebox-month {
-  width: 50px;
-  height: 35px;
-  font-weight: bold;
-  font-size: 14px;
-  text-align: center;
-  padding-top: 4px;
-  color: #bbd5f1;
-  background-color: #6498cc;
-}
-
-.datebox-weekday {
-  height: 30px;
-  float: center;
-  vertical-align: middle;
-  color: #ccc;
-  font-size: 35px;
-  line-height: 1;
-}
-
-
-// .datebox {
-//   display: grid;
-//   width: 200px;
-//   height: 35px;
-//   grid-template-columns: 1fr 1fr;
-//   position: relative;
-//   left: -180px;
-//   top: 35px;
-//   line-height: 1;
-// }
-
-// .datebox-month {
-//   width: 50px;
-//   height: 35px;
-//   font-weight: bold;
-//   font-size: 14px;
-//   text-align: center;
-//   padding-top: 4px;
-//   color: #bbd5f1;
-//   background-color: #6498cc;
-// }
-
-// .datebox-weekday {
-//   height: 30px;
-//   float: center;
-//   vertical-align: middle;
-//   color: #ccc;
-//   font-size: 35px;
-//   line-height: 1;
-// }
 
 .post-release-date{
   font-size: small;

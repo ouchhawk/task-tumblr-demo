@@ -6,24 +6,11 @@
   font-size: small;
 }
 
-.footer a:active {
+.footer a:active, a:visited,a:link, a:hover {
   text-decoration:none;
-}
-
-.footer a:visited {
-  text-decoration:none;
-}
-
-.footer a:link {
-  text-decoration:none;
-}
-
-.footer a:hover {
-  text-decoration:underline;
 }
 
 .banner {
-  float: center;
   display: grid;
   grid-template-columns: 6fr 2fr 2fr 1fr;
   font-weight: bolder;
@@ -63,8 +50,8 @@
   width: 125px;
   height: 50px;
   color: #7c5cff;
-  background-color: #ffffff;
-  border-color: #ffffff;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 #signin-button {
@@ -73,9 +60,9 @@
   margin: 10px;
   width: 125px;
   height: 50px;
-  color: #ffffff;
+  color: #fff;
   background-color: #7c5cff;
-  border-color: #ffffff;
+  border-color: #fff;
 }
 
 #close-button {
@@ -84,6 +71,6 @@
   height: 20px;
   top: -12px;
   left: -5px;
-  color: #ffffff;
+  color: #fff;
   opacity: 1;
 }

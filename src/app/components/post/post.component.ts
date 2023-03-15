@@ -21,12 +21,11 @@ export class PostComponent {
   isSinglePost: boolean = false;
   postCount: number;
   root: Root;
-  currentPost:Post;
+  currentPost: Post;
 
   constructor(private postService: PostService, private helperService: HelperService, private modalService: NgbModal, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.postIndex);
     this.postService.getRoot().subscribe(root => {
       this.root = root;
       this.posts = this.root.posts;
@@ -34,11 +33,6 @@ export class PostComponent {
       this.postCount = root['posts-total'];
       this.helperService.parseAndAssignDates(this.posts);
       this.helperService.categorizePostsByDate(this.posts);
-
-      // if(this.postIndex){
-      //   this.posts = [this.root.posts[this.postIndex]];
-      //   this.isModalVisible[this.postIndex] = true;
-      // }
 
       this.activatedRoute.params.subscribe(params => {
         if (params["id"]) {
@@ -57,32 +51,15 @@ export class PostComponent {
     })
   };
 
-  setCurrentPost(i: number) {
-    this.posts = [this.root.posts[i]];
-    this.currentPost=this.root.posts[i];
+  setCurrentPost(id: string) {
+    const currentPost = this.root.posts.filter(post => post.id === id)[0];
+    this.posts = [currentPost];
+    this.currentPost = currentPost;
   }
 
-  
-
-  categorizePostsByDate(posts: Post[]) {
-    // Assign only the first post of each day, set false the rest until the day changes. Repeat for each day. 
-    posts.forEach(post => {
-      let previousMonth = '',
-        previousDay = '';
-
-      if (previousDay === post['day'] && previousMonth === post['month']) {
-        post['is-date-visible'] = false;
-      } else {
-        post['is-date-visible'] = true;
-      }
-      previousMonth = post['month'];
-      previousDay = post['day'];
-    })
-  };
-
-  onClickShowModal(index:number) {
+  onClickShowModal(id: string) {
+    const post = this.root.posts.filter(post => post.id === id)[0]
     const modalRef = this.modalService.open(PostContentComponent, { scrollable: true });
-    modalRef.componentInstance.post = this.posts[index];
-}
-
+    modalRef.componentInstance.post = post;
+  }
 }

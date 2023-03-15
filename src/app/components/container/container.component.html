@@ -1,25 +1,28 @@
 <div class="container">
-  <h1>
-    <b class="title">
-      <a href="/">{{ this.root?.tumblelog?.title }} ({{this.root['posts-total']}}) </a>
-    </b>
-  </h1>
+  <div class="header">
+    <h1 class="title">
+      <a href="/">{{ this.root.tumblelog.title }} ({{this.root['posts-total']}}) </a>
+    </h1>
+    <a href="https://demo.tumblr.com/rss" alt="rss" class="rss-button">
+      <img src="https://static.tumblr.com/vr9xgox/oiLnf8zpv/rss.gif" alt="rss">
+    </a>
+  </div>
 
-  <a href="https://demo.tumblr.com/rss" alt="rss" class="rss-button">
-    <img src="https://static.tumblr.com/vr9xgox/oiLnf8zpv/rss.gif" alt="rss">
-  </a>
   <hr />
-  <div class="post-container">
-    <div class="post-content">
-      <!-- blog description -->
-      <form action="" class="blog-description-form">
-        <input class="search-box" type="text" placeholder="">
-        <button class="search-button">Search</button>
-        <div [innerHTML]="this.root?.tumblelog?.description"></div>
-        <br>
-        <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
-      </form>
-      <app-post></app-post>
+
+  <div>
+    <div class="post-container">
+      <div class="post-content">
+
+        <!-- blog description -->
+        <form action="" class="blog-description-form">
+          <input class="search-box" type="text" placeholder="">
+          <button class="search-button">Search</button>
+          <div [innerHTML]="this.root.tumblelog.description"></div>
+          <br>
+          <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
+        </form>
+        <app-post></app-post>
+      </div>
     </div>
   </div>
-</div>
