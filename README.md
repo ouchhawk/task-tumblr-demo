@@ -2,13 +2,13 @@ A webpage similar to http://demo.tumblr.com
 
 Api: https://demo.tumblr.com/api/read/json
 
-## Important
+# Important!
 
-To solve depencency conflict, use --legacy-peer-deps argument while installing:
+* Disable CORS from your browser.
+
+* Install packages with --legacy-peer-deps argument:
 ```
-../project-folder/tumblr-asg-demo$ npm install --legacy-peer-deps
+../tumblr-asg-demo$ npm install --legacy-peer-deps
 ```
 
-You can use npm start to build the app:
-```
-../tumblr-asg-demo$ npm start
+Published version: https://luminous-capybara-203d64.netlify.app/ ( remember disabling cors settings! )

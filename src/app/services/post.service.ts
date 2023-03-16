@@ -9,7 +9,7 @@ import { map, Observable } from 'rxjs';
 })
 export class PostService {
   constructor(private httpClient: HttpClient, private helperService: HelperService) { }
-  apiUrl = '/api/read/json';
+  apiUrl = 'https://demo.tumblr.com/api/read/json';
 
   getRawData(): Observable<any> {
     return this.httpClient.get(this.apiUrl, { responseType: 'text' });
@@ -23,7 +23,6 @@ export class PostService {
     );
   }
 }
-
 
 
 
