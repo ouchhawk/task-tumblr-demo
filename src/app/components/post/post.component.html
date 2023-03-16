@@ -17,14 +17,14 @@
     <app-post-content [post]="post"></app-post-content>
 
     <div>
-        <button class="btn btn-outline-primary mb-2 me-2" (click)="onClickShowModal(post.id)">Open Modal</button>
+        <button class="btn-outline-primary mb-2 me-2" (click)="onClickShowModal(post.id)">Open Modal</button>
     </div>
-
+ 
     <!-- arrow button  -->
     <div class="post-link">
         <button class="btn show-arrow-button" (click)="setCurrentPost(post.id)"><img
                 src="https://static.tumblr.com/vr9xgox/NoWnf8zop/permalink.gif" alt="open content" /></button>
     </div>
-
+ 
     <hr>
 </div>

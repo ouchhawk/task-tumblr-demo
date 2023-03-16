@@ -25,26 +25,16 @@
 .dark-modal {
   .modal-content {
     background-color: #292b2c;
-    color: white;}
+    color: white;
+  }
 
   .close {
     color: white;
   }
 }
 
-.dark-modal 
-
-.light-blue-backdrop {
+.dark-modal .light-blue-backdrop {
   background-color: #5cb3fd;
-}
-
-.search-box {
-  position: relative;
-  width: 166px;
-}
-
-.search-button {
-  border-width: thin;
 }
 
 .quote-text {
@@ -66,7 +56,7 @@
 }
 
 .quote-source {
-  font-size: 1em;
+  font-size: 16px;
   font-weight: bold;
   color: #444;
 }
@@ -81,9 +71,10 @@
 }
 
 .photo-caption {
-  font-size: 0.8em;
+  font-size: 13px;
   font-weight: bold;
   color: #444;
+  text-align: center;
 
   a:visited {
     text-decoration: underline;
@@ -99,21 +90,26 @@
     color: #cc0000;
     font-weight: bold;
   }
-}
 
-.link-description {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: small;
-  font-weight: 300;
-  letter-spacing: -1px;
+  .link-text {
+    font-size: 19px;
+  }
+
+  .link-description {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: small;
+    font-weight: 300;
+    letter-spacing: -1px;
+  }
 }
 
 .conversation {
   font-family: Helvetica, Arial, sans-serif;
   text-align: left;
   color: #888;
-  font-size: 0.8em;
+  font-size: 12px;
   border-left: 5px solid #bbb;
+  line-height: 18px;
 
   table {
     width: 415px;
@@ -133,6 +129,7 @@
 }
 
 .chat-message:nth-child(odd) {
+  font-weight: normal;
   .chat-user {
     color: #cc0000;
     font-weight: bold;
@@ -148,6 +145,7 @@
 
 .audio {
   text-align: left;
+  font-size: 14px;
 
   table {
     padding-top: 0em;
@@ -167,6 +165,7 @@
 
 .audio-caption {
   padding-left: 1em;
+  font-weight: normal;
 }
 
 .regular {
@@ -182,4 +181,7 @@
 
 .inactive {
   display: none;
+}
+
+.post-release-date {
 }

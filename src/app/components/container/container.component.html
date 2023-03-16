@@ -9,19 +9,20 @@
   </div>
 
   <hr />
-
   <div>
     <div class="post-container">
+       <!-- blog description -->
+       <form action="" class="blog-description-form">
+        <input class="search-box" type="text" placeholder="">
+        <button class="search-button">Search</button>
+        <div [innerHTML]="this.root.tumblelog.description"></div>
+        <br>
+        <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
+      </form>
+      
       <div class="post-content">
 
-        <!-- blog description -->
-        <form action="" class="blog-description-form">
-          <input class="search-box" type="text" placeholder="">
-          <button class="search-button">Search</button>
-          <div [innerHTML]="this.root.tumblelog.description"></div>
-          <br>
-          <a href="https://demo.tumblr.com/archive" target="_blank">Archive</a>
-        </form>
+       
         <app-post></app-post>
       </div>
     </div>

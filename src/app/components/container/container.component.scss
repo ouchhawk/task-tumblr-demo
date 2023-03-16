@@ -1,5 +1,5 @@
 .container {
-  width: 927px;
+  width: 824px;
 
   .header{
     position: relative;
@@ -10,6 +10,7 @@
       font-size: 50px;
       font-weight: bold;
       color: #444;
+      padding-top: 20px;
   
       a {
         text-decoration: unset;
@@ -19,7 +20,7 @@
     .rss-button {
       position: absolute;
       bottom: 0px;
-      right: 0px;
+      right: 1px;
     }
   }
   
@@ -30,15 +31,25 @@
   
     .post-content {
       grid-column-start: 2;
-      width: 420px;
-  
-      .blog-description-form {
-        position: absolute;
-        top: 40px;
-        right: 0px;
-        width: 147px;
-        line-height: normal;
-        text-align: right;
+      width: 420px;  
+    }
+
+    .blog-description-form {
+      position: absolute;
+      width: 151px;
+      right: 18px;
+      top: 0;
+      line-height: normal;
+      text-align: right;
+
+      .search-box {
+        position: relative;
+        width: 166px;
+      }
+      
+      .search-button {
+        font-size:13px;
+        border-width: thin;
       }
     }
   }

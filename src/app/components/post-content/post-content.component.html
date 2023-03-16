@@ -8,6 +8,7 @@
             — <span [innerHTML]="post['quote-source']"></span>
         </b>
     </div>
+    <br>
 </div>
 
 <!-- photo -->
@@ -28,6 +29,7 @@
         </a>
         <br />
         <div [innerHTML]="post['link-description']" class="link-description"></div>
+        <br>
     </div>
 </div>
 
@@ -37,26 +39,27 @@
         <table>
             <tr>
                 <div class="chat-message" *ngFor="let conversation of post.conversation">
-                    <span class="chat-user">{{ conversation.name }}: </span><span>{{ conversation.phrase
-                        }}</span>
+                    <th><span class="chat-user">{{ conversation.name }}: </span><span>{{ conversation.phrase
+                        }}</span></th>
                 </div>
             </tr>
         </table>
     </div>
+    <br>
 </div>
 
 <!-- audio -->
 <div *ngIf="post.type === 'audio'">
     <div class="audio">
         <table>
-            <tr>
-                <td class="bi bi-play">
+            <tr >
+                <th class="bi bi-play">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 16 16">
                         <path
                             d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z" />
                     </svg>
                     <span class="audio-player">Dinle</span>
-                </td>
+                </th>
             </tr>
         </table>
         <br />
@@ -65,7 +68,7 @@
 </div>
 
 <!-- regular -->
-<div *ngIf="post.type === 'regular'">
+<div *ngIf="post.type === 'regular'" >
     <div class="regular-title" [innerHTML]="post['regular-title']"></div>
     <div class="regular-body" [innerHTML]="post['regular-body']"></div>
 </div>

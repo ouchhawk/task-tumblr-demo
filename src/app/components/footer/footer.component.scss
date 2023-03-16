@@ -1,76 +1,82 @@
-.footer {
-  text-align: center;
-  margin-bottom: 25px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  letter-spacing: -0.5px;
-  font-size: small;
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .powered-text {
+    margin-bottom: 25px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    letter-spacing: -0.5px;
+    font-size: small;
+  }
+  
+  .banner {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 650px;
+    height: 100px;
+    font-weight: bolder;
+    margin: 5px;
+    z-index: 2;
+    top: 100%;
+    left: 50%;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #7c5cff;
+  
+    .banner-title {
+      font-size: 20px;
+      font-weight: 750;
+    }
+    
+    .banner-content {
+      width: 300px;
+      font-size: 15px;
+    }
+
+    .banner-body{
+      justify-content: start;
+    }
+
+    .footer-buttons{
+      position: relative;
+  
+      #register-button {
+        justify-content: center;
+        font-weight: bold;
+        margin: 10px;
+        width: 125px;
+        height: 50px;
+        color: #7c5cff;
+        background-color: #fff;
+        border-color: #fff;
+      }
+      
+      #signin-button {
+        font-weight: bold;
+        margin: 10px;
+        width: 125px;
+        height: 50px;
+        color: #fff;
+        background-color: #7c5cff;
+        border-color: #fff;
+      }
+      
+      #close-button {
+        position: relative;
+        height: 20px;
+        top: -12px;
+        left: -5px;
+        color: #fff;
+        opacity: 1;
+      }
+    }
+  }
 }
 
-.footer a:active, a:visited,a:link, a:hover {
-  text-decoration:none;
-}
 
-.banner {
-  display: grid;
-  grid-template-columns: 6fr 2fr 2fr 1fr;
-  font-weight: bolder;
-  margin: 5px;
-  z-index: 2;
-  position: fixed;
-  width: 650px;
-  padding-left: 25px;
-  padding-top: 15px;
-  color: #ffffff;
-  background-color: #7c5cff;
-  top: 100%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -346px;
-}
 
-.banner-title {
-  font-size: 20px;
-  font-weight: 750;
-}
 
-.banner-content {
-  width: 300px;
-  font-size: 15px;
-}
 
-.banner-body {
-  grid-column-start: 1;
-}
-
-#register-button {
-  grid-column-start: 7;
-  justify-content: center;
-  font-weight: bold;
-  margin: 10px;
-  width: 125px;
-  height: 50px;
-  color: #7c5cff;
-  background-color: #fff;
-  border-color: #fff;
-}
-
-#signin-button {
-  grid-column-start: 9;
-  font-weight: bold;
-  margin: 10px;
-  width: 125px;
-  height: 50px;
-  color: #fff;
-  background-color: #7c5cff;
-  border-color: #fff;
-}
-
-#close-button {
-  grid-column-start: 11;
-  position: relative;
-  height: 20px;
-  top: -12px;
-  left: -5px;
-  color: #fff;
-  opacity: 1;
-}
